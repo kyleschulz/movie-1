@@ -1,5 +1,6 @@
 package org.aim.movie.director;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,14 @@ public class DirectorController {
     @GetMapping(path = "/{id}")
     public @ResponseBody Director getDirector(@PathVariable(value = "id") Integer id) {
         Optional<Director> director = directorRepository.findById(id);
-        return director.get();
+
+        try {
+            return director.get();
+
+        } catch (NoSuchElementException nsee) {
+            nsee.printStackTrace();
+        }
+        return null;
     }
 
     @PostMapping(path = "/")
