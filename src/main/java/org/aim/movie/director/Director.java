@@ -16,10 +16,9 @@ public class Director {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "director_id")
     private Integer id;
-
     private String firstName;
     private String lastName;
-    private Date dateOfBrith;
+    private Date dateOfBirth;
 
     public Integer getId() {
         return id;
@@ -46,11 +45,11 @@ public class Director {
     }
 
     public Date getDateOfBrith() {
-        return dateOfBrith;
+        return dateOfBirth;
     }
 
     public void setDateOfBrith(Date dateOfBrith) {
-        this.dateOfBrith = dateOfBrith;
+        this.dateOfBirth = dateOfBrith;
     }
 
 }
