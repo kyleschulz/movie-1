@@ -38,6 +38,7 @@ public class DirectorController {
         } catch (NoSuchElementException nsee) {
             nsee.printStackTrace();
         }
+        response.setStatus(HttpStatus.NOT_FOUND.value());
         return null;
     }
 
