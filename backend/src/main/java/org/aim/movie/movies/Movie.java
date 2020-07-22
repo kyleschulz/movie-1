@@ -99,13 +99,6 @@ public class Movie {
         this.genre = genre;
     }
 
-    public Rating getRating() {
-        return rating;
-    }
-
-    public void setRating(Rating rating) {
-        this.rating = rating;
-    }
 
     public List<Actor> getActors() {
         return actors;
@@ -113,6 +106,14 @@ public class Movie {
 
     public void setActors(List<Actor> actors) {
         this.actors = actors;
+    }
+
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
 
 }
