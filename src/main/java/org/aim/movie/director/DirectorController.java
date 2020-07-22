@@ -3,7 +3,10 @@ package org.aim.movie.director;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +29,7 @@ public class DirectorController {
     }
 
     @GetMapping(path = "/{id}")
-    public @ResponseBody Director getDirector(@PathVariable(value = "id") Integer id) {
+    public @ResponseBody Director getDirector(@PathVariable(value = "id") Integer id, HttpServletResponse response) {
         Optional<Director> director = directorRepository.findById(id);
 
         try {
@@ -35,6 +38,7 @@ public class DirectorController {
         } catch (NoSuchElementException nsee) {
             nsee.printStackTrace();
         }
+        response.setStatus(HttpStatus.class);
         return null;
     }
 
@@ -52,7 +56,7 @@ public class DirectorController {
 
         director.setFirstName(directorDetails.getFirstName());
         director.setLastName(directorDetails.getLastName());
-        director.setDateOfBirth(directorDetails.getDateOfBrith());
+        director.setDateOfBirth(directorDetails.getDateOfBirth());
 
         directorRepository.save(director);
         return "Updated";

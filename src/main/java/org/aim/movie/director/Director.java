@@ -44,12 +44,12 @@ public class Director {
         this.lastName = lastName;
     }
 
-    public Date getDateOfBrith() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBrith(Date dateOfBrith) {
-        this.dateOfBirth = dateOfBrith;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
 }
