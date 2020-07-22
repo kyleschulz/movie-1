@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+    <title>Front end</title>
+    <meta charset = "UTF-8">
+    </head>
+    <body>
+    <h1>Hello World!</h1>
+    <table id="actors">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+        </tr>
+        <thead>
+        <tbody></tbody>
+    </table>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            function getAllActors(){
+                axios.get('http://localhost:8080/api/actors')
+                .then (
+                    function (response){
+                        console.log('getAllActors() response =', response)
+                        //get location of tbbody
+                       const tbody = document.querySelector("#actor tbody");
+
+                        //loop through all elements in response
+
+
+                        //create html 
+
+
+                        //insert html into tbody
+                   
+                })
+                .catch(
+                    function(error){
+                        console.log(error);
+                    }
+                )
+            }
+            getAllActors();
+        </script>
+    </body>
+</html>
