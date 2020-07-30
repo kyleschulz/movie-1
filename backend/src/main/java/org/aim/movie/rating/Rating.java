@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ratings")
 public class Rating {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "rating_id")

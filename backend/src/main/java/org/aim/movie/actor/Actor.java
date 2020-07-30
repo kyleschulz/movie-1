@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "actors")
 public class Actor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "actor_id")

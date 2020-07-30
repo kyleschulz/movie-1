@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping(path = "/api/actors")
 public class ActorController {
+
     @Autowired
     private ActorRepository actorRepository;
 
@@ -37,7 +38,8 @@ public class ActorController {
     }
 
     @PutMapping(path = "/{id}")
-    public @ResponseBody String updatActor(@PathVariable(value = "id") Integer id, @RequestBody Actor actorDetails) {
+    public @ResponseBody String updateActor(@PathVariable(value = "id") Integer id, @RequestBody Actor actorDetails) {
+
         Optional<Actor> optionalActor = actorRepository.findById(id);
         Actor actor = optionalActor.get();
 
@@ -46,7 +48,6 @@ public class ActorController {
         actor.setDateOfBirth(actorDetails.getDateOfBirth());
 
         actorRepository.save(actor);
-
         return "Updated";
     }
 

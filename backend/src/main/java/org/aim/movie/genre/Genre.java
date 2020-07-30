@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "genres")
 public class Genre {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "genre_id")
@@ -33,5 +33,5 @@ public class Genre {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
+    
 }
