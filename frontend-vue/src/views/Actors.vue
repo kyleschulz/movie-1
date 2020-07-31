@@ -1,0 +1,42 @@
+<template>
+  <div id="main">
+    <div class="header">
+      <h1 class="title">Actors</h1>
+    </div>
+
+    <div class="content">
+      <table id="actors">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="actor in actors" :key="actor.id">
+            <td>{{actor.id}}</td>
+            <td>{{actor.firstName}}</td>
+            <td>{{actor.dateOfBirth}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {{actors}}
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Actors",
+  data: () => ({
+    actors: [],
+  }),
+  async mounted() {
+    console.log("actors mounted being");
+    const { data } = await this.$http.get("http://localhost:8080/api/actors");
+    console.log("actors mounted data", data);
+    this.actors = data;
+  },
+};
+</script>
