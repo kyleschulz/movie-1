@@ -4,6 +4,8 @@
       <h1 class="title">Actors</h1>
     </div>
 
+    <router-link to="/actor" tag="button" class="button-is-primary">Add Actor</router-link>
+
     <div class="content">
       <table id="actors">
         <thead>
@@ -22,7 +24,6 @@
         </tbody>
       </table>
     </div>
-    {{actors}}
   </div>
 </template>
 
@@ -40,3 +41,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+button {
+  float: right;
+}
+</style>
