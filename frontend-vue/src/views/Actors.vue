@@ -4,10 +4,10 @@
       <h1 class="title">Actors</h1>
     </div>
 
-    <router-link to="/actor" tag="button" class="button-is-primary">Add Actor</router-link>
+    <router-link to="/actor" tag="button" class="button is-primary">Add Actor</router-link>
 
     <div class="content">
-      <table id="actors">
+      <table id="actors" class="table">
         <thead>
           <tr>
             <th>#</th>
@@ -17,9 +17,9 @@
         </thead>
         <tbody>
           <tr v-for="actor in actors" :key="actor.id">
-            <td>{{actor.id}}</td>
-            <td>{{actor.firstName}}</td>
-            <td>{{actor.dateOfBirth}}</td>
+            <td>{{ actor.id }}</td>
+            <td>{{ actor.firstName }} {{ actor.lastName }}</td>
+            <td>{{ actor.dateOfBirth }}</td>
           </tr>
         </tbody>
       </table>
@@ -41,6 +41,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 button {
   float: right;

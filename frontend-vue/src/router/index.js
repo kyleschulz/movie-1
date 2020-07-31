@@ -13,10 +13,8 @@ const routes = [{
         path: '/actor',
         name: 'Actor',
         component: () =>
-            import ( /* webpackChunkName: "actors" */ '../views/AddActor.vue')
-
+            import ('../views/AddActor.vue')
     },
-
     {
         path: '/actors',
         name: 'Actors',
