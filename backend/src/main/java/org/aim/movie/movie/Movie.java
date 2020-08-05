@@ -1,8 +1,8 @@
 package org.aim.movie.movie;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,11 +13,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 import org.aim.movie.actor.Actor;
 import org.aim.movie.director.Director;
 import org.aim.movie.genre.Genre;
 import org.aim.movie.rating.Rating;
+
+
 
 @Entity
 @Table(name = "movies")
@@ -33,6 +34,9 @@ public class Movie {
 
     private int movieLength;
 
+    private String trailerUrl;
+
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date releaseDate;
 
     @ManyToOne
@@ -113,6 +117,14 @@ public class Movie {
 
     public void setActors(List<Actor> actors) {
         this.actors = actors;
+    }
+
+    public String getTrailerUrl() {
+        return trailerUrl;
+    }
+
+    public void setTrailerUrl(String trailerUrl) {
+        this.trailerUrl = trailerUrl;
     }
 
 }
