@@ -31,11 +31,19 @@ const routes = [{
             import ('../views/Movies.vue')
     },
     {
+        path: '/movie/add',
+        name: 'AddMovie',
+        component: () =>
+            import ('../views/AddMovie.vue')
+
+    },
+    {
         path: '/movie/:id',
         name: 'Movie',
         component: () =>
-            import ('../views/Movie.vue')
+            import ('../views/MovieDetail.vue')
     }
+
 ]
 
 const router = new VueRouter({

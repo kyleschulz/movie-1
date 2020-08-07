@@ -32,6 +32,7 @@ public class Movie {
     @Column(name = "movie_name")
     private String movieTitle;
 
+    @Column(columnDefinition =  "integer default 0")
     private int movieLength;
 
     private String trailerUrl;
